@@ -1,31 +1,44 @@
 .home {
-  display: flex;
+  display: grid;
+  gap: 20px;
+  grid-template-columns: repeat(4, 1fr);
+  grid-auto-rows: minmax(180px, auto);
+  grid-auto-flow: dense;
 
-  .homeContainer {
-    flex: 6;
+  @include responsive.xl {
+    grid-template-columns: repeat(3, 1fr);
+  }
+  @include responsive.lg {
+    grid-template-columns: repeat(2, 1fr);
+  }
+  @include responsive.md {
+    grid-template-columns: repeat(1, 1fr);
+  }
+  @include responsive.sm {
+    grid-auto-rows: minmax(120px, auto);
+  }
 
-    .widgets,
-    .charts {
-      display: flex;
-      padding: 20px;
-      gap: 20px;
-    }
+  .box {
+    padding: 20px;
+    border-radius: 10px;
+    border: 2px solid variables.$soft-bg;
+  }
 
-    .charts {
-      padding: 5px 20px;
-    }
+  .box1 {
+    grid-column: span 1;
+    grid-row: span 3;
+  }
 
-    .listContainer {
-      -webkit-box-shadow: 2px 4px 10px 1px rgba(0, 0, 0, 0.47);
-      box-shadow: 2px 4px 10px 1px rgba(201, 201, 201, 0.47);
-      padding: 20px;
-      margin: 20px;
+  .box4 {
+    grid-column: span 1;
+    grid-row: span 3;
+  }
+  .box7 {
+    grid-column: span 2;
+    grid-row: span 2;
 
-      .listTitle {
-        font-weight: 500;
-        color: gray;
-        margin-bottom: 15px;
-      }
+    @include responsive.md {
+      display: none;
     }
   }
 }
