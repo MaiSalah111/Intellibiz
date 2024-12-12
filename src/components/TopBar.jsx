@@ -7,8 +7,11 @@ import {
   Typography,
   styled,
   useTheme,
+  Menu,
+  MenuItem,
+  Badge,
 } from "@mui/material";
-import React from "react";
+import React, { useState } from "react";
 import SearchIcon from "@mui/icons-material/Search";
 import MenuIcon from "@mui/icons-material/Menu";
 import MuiAppBar from "@mui/material/AppBar";
@@ -83,6 +86,39 @@ const StyledInputBase = styled(InputBase)(({ theme }) => ({
 
 const TopBar = ({ open, handleDrawerOpen, setMode }) => {
   const theme = useTheme();
+  
+  // Add state for menus
+  const [notificationsAnchor, setNotificationsAnchor] = useState(null);
+  const [settingsAnchor, setSettingsAnchor] = useState(null);
+  const [profileAnchor, setProfileAnchor] = useState(null);
+
+  // Handlers for notifications
+  const handleNotificationsClick = (event) => {
+    setNotificationsAnchor(event.currentTarget);
+  };
+
+  const handleNotificationsClose = () => {
+    setNotificationsAnchor(null);
+  };
+
+  // Handlers for settings
+  const handleSettingsClick = (event) => {
+    setSettingsAnchor(event.currentTarget);
+  };
+
+  const handleSettingsClose = () => {
+    setSettingsAnchor(null);
+  };
+
+  // Handlers for profile
+  const handleProfileClick = (event) => {
+    setProfileAnchor(event.currentTarget);
+  };
+
+  const handleProfileClose = () => {
+    setProfileAnchor(null);
+  };
+
   return (
     <AppBar
       position="fixed"
@@ -148,17 +184,55 @@ const TopBar = ({ open, handleDrawerOpen, setMode }) => {
             </IconButton>
           )}
 
-          <IconButton color="inherit">
-            <NotificationsOutlinedIcon />
+          <IconButton 
+            color="inherit"
+            onClick={handleNotificationsClick}
+          >
+            <Badge badgeContent={3} color="error">
+              <NotificationsOutlinedIcon />
+            </Badge>
           </IconButton>
+          <Menu
+            anchorEl={notificationsAnchor}
+            open={Boolean(notificationsAnchor)}
+            onClose={handleNotificationsClose}
+          >
+            <MenuItem onClick={handleNotificationsClose}>New Message</MenuItem>
+            <MenuItem onClick={handleNotificationsClose}>Task Update</MenuItem>
+            <MenuItem onClick={handleNotificationsClose}>Alert</MenuItem>
+          </Menu>
 
-          <IconButton color="inherit">
+          <IconButton 
+            color="inherit"
+            onClick={handleSettingsClick}
+          >
             <SettingsOutlinedIcon />
           </IconButton>
+          <Menu
+            anchorEl={settingsAnchor}
+            open={Boolean(settingsAnchor)}
+            onClose={handleSettingsClose}
+          >
+            <MenuItem onClick={handleSettingsClose}>General</MenuItem>
+            <MenuItem onClick={handleSettingsClose}>Security</MenuItem>
+            <MenuItem onClick={handleSettingsClose}>Notifications</MenuItem>
+          </Menu>
 
-          <IconButton color="inherit">
+          <IconButton 
+            color="inherit"
+            onClick={handleProfileClick}
+          >
             <Person2OutlinedIcon />
           </IconButton>
+          <Menu
+            anchorEl={profileAnchor}
+            open={Boolean(profileAnchor)}
+            onClose={handleProfileClose}
+          >
+            <MenuItem onClick={handleProfileClose}>Profile</MenuItem>
+            <MenuItem onClick={handleProfileClose}>My Account</MenuItem>
+            <MenuItem onClick={handleProfileClose}>Logout</MenuItem>
+          </Menu>
         </Stack>
       </Toolbar>
     </AppBar>

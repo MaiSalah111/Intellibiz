@@ -11,7 +11,7 @@ const Dashboard = () => {
   const theme = useTheme();
   return (
     <div>
-<Stack direction={"row"} justifyContent={"space-between"} alignItems={"center"}>
+      <Stack direction={"row"} justifyContent={"space-between"} alignItems={"center"}>
         <Header
           isDashboard={true}
           title={"DASHBOARD"}
@@ -28,7 +28,7 @@ const Dashboard = () => {
             Download Reports
           </Button>
         </Box>
-</Stack>
+      </Stack>
 
       <Row1 />
       <Row2 />

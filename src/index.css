@@ -1,9 +1,8 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@500&display=swap');
 
-  @import url('https://fonts.googleapis.com/css2?family=Roboto:wght@500&display=swap');
-
-  *{
-    font-family: 'Roboto', sans-serif;
-  }
+* {
+  font-family: 'Roboto', sans-serif;
+}
 
 
 
@@ -39,3 +38,26 @@
  
 /* for Firefox */
  html {scrollbar-color: #9e4673 #3d4a59;} 
+
+/* Update the AI assistant z-index to be lower than the TopBar */
+[data-ai-assistant="true"] {
+  position: relative !important;
+  z-index: 1000 !important;
+}
+
+/* Ensure TopBar buttons are always clickable */
+.MuiAppBar-root {
+  z-index: 1500 !important;
+}
+
+/* Ensure other interactive elements are clickable */
+button, a, input, select {
+  position: relative;
+  z-index: 1;
+}
+
+/* Add specific z-index for TopBar buttons */
+.MuiToolbar-root .MuiIconButton-root {
+  position: relative;
+  z-index: 1600 !important;
+}
