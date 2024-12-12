@@ -1,225 +1,78 @@
- 
- 
 import React from "react";
 import { Box, useTheme } from "@mui/material";
-
 import { ResponsiveLine } from "@nivo/line";
 
 const data = [
   {
-    id: "france",
+    id: "Abu Dhabi",
     color: "hsl(4, 70%, 50%)",
     data: [
-      {
-        x: "plane",
-        y: 79,
-      },
-      {
-        x: "helicopter",
-        y: 28,
-      },
-      {
-        x: "boat",
-        y: 150,
-      },
-      {
-        x: "train",
-        y: 173,
-      },
-      {
-        x: "subway",
-        y: 234,
-      },
-      {
-        x: "bus",
-        y: 98,
-      },
-      {
-        x: "car",
-        y: 244,
-      },
-      {
-        x: "moto",
-        y: 295,
-      },
-      {
-        x: "bicycle",
-        y: 287,
-      },
-      {
-        x: "horse",
-        y: 157,
-      },
-      {
-        x: "skateboard",
-        y: 239,
-      },
-      {
-        x: "others",
-        y: 69,
-      },
+      { x: "Jan", y: 147 },
+      { x: "Feb", y: 125 },
+      { x: "Mar", y: 156 },
+      { x: "Apr", y: 165 },
+      { x: "May", y: 153 },
+      { x: "Jun", y: 172 },
+      { x: "Jul", y: 168 },
+      { x: "Aug", y: 182 },
+      { x: "Sep", y: 191 },
+      { x: "Oct", y: 181 },
+      { x: "Nov", y: 185 },
+      { x: "Dec", y: 194 },
     ],
   },
   {
-    id: "us",
+    id: "Dubai",
     color: "hsl(205, 70%, 50%)",
     data: [
-      {
-        x: "plane",
-        y: 278,
-      },
-      {
-        x: "helicopter",
-        y: 222,
-      },
-      {
-        x: "boat",
-        y: 65,
-      },
-      {
-        x: "train",
-        y: 213,
-      },
-      {
-        x: "subway",
-        y: 89,
-      },
-      {
-        x: "bus",
-        y: 278,
-      },
-      {
-        x: "car",
-        y: 231,
-      },
-      {
-        x: "moto",
-        y: 47,
-      },
-      {
-        x: "bicycle",
-        y: 126,
-      },
-      {
-        x: "horse",
-        y: 191,
-      },
-      {
-        x: "skateboard",
-        y: 95,
-      },
-      {
-        x: "others",
-        y: 26,
-      },
+      { x: "Jan", y: 158 },
+      { x: "Feb", y: 162 },
+      { x: "Mar", y: 170 },
+      { x: "Apr", y: 179 },
+      { x: "May", y: 175 },
+      { x: "Jun", y: 185 },
+      { x: "Jul", y: 183 },
+      { x: "Aug", y: 189 },
+      { x: "Sep", y: 197 },
+      { x: "Oct", y: 187 },
+      { x: "Nov", y: 199 },
+      { x: "Dec", y: 201 },
     ],
   },
   {
-    id: "germany",
+    id: "Sharjah",
     color: "hsl(39, 70%, 50%)",
     data: [
-      {
-        x: "plane",
-        y: 3,
-      },
-      {
-        x: "helicopter",
-        y: 187,
-      },
-      {
-        x: "boat",
-        y: 259,
-      },
-      {
-        x: "train",
-        y: 294,
-      },
-      {
-        x: "subway",
-        y: 158,
-      },
-      {
-        x: "bus",
-        y: 146,
-      },
-      {
-        x: "car",
-        y: 125,
-      },
-      {
-        x: "moto",
-        y: 253,
-      },
-      {
-        x: "bicycle",
-        y: 230,
-      },
-      {
-        x: "horse",
-        y: 287,
-      },
-      {
-        x: "skateboard",
-        y: 193,
-      },
-      {
-        x: "others",
-        y: 12,
-      },
+      { x: "Jan", y: 92 },
+      { x: "Feb", y: 85 },
+      { x: "Mar", y: 96 },
+      { x: "Apr", y: 105 },
+      { x: "May", y: 103 },
+      { x: "Jun", y: 112 },
+      { x: "Jul", y: 108 },
+      { x: "Aug", y: 122 },
+      { x: "Sep", y: 131 },
+      { x: "Oct", y: 121 },
+      { x: "Nov", y: 125 },
+      { x: "Dec", y: 134 },
     ],
   },
   {
-    id: "norway",
+    id: "Ajman",
     color: "hsl(179, 70%, 50%)",
     data: [
-      {
-        x: "plane",
-        y: 213,
-      },
-      {
-        x: "helicopter",
-        y: 271,
-      },
-      {
-        x: "boat",
-        y: 22,
-      },
-      {
-        x: "train",
-        y: 270,
-      },
-      {
-        x: "subway",
-        y: 97,
-      },
-      {
-        x: "bus",
-        y: 146,
-      },
-      {
-        x: "car",
-        y: 116,
-      },
-      {
-        x: "moto",
-        y: 159,
-      },
-      {
-        x: "bicycle",
-        y: 165,
-      },
-      {
-        x: "horse",
-        y: 210,
-      },
-      {
-        x: "skateboard",
-        y: 76,
-      },
-      {
-        x: "others",
-        y: 126,
-      },
+      { x: "Jan", y: 45 },
+      { x: "Feb", y: 42 },
+      { x: "Mar", y: 48 },
+      { x: "Apr", y: 53 },
+      { x: "May", y: 51 },
+      { x: "Jun", y: 56 },
+      { x: "Jul", y: 54 },
+      { x: "Aug", y: 61 },
+      { x: "Sep", y: 65 },
+      { x: "Oct", y: 60 },
+      { x: "Nov", y: 62 },
+      { x: "Dec", y: 67 },
     ],
   },
 ];
@@ -227,7 +80,7 @@ const data = [
 const Line = ({isDahboard = false}) => {
   const theme = useTheme();
   return (
-    <Box sx={{ height: isDahboard?  "280px"  :  "75vh" }}>
+    <Box sx={{ height: isDahboard ? "280px" : "75vh" }}>
       <ResponsiveLine
         theme={{
           textColor: theme.palette.text.primary,
@@ -324,7 +177,6 @@ const Line = ({isDahboard = false}) => {
           },
         }}
         data={data}
-        curve="catmullRom"
         margin={{ top: 50, right: 110, bottom: 50, left: 60 }}
         xScale={{ type: "point" }}
         yScale={{
@@ -334,24 +186,22 @@ const Line = ({isDahboard = false}) => {
           stacked: true,
           reverse: false,
         }}
-        yFormat=" >-.2f"
+        yFormat=" >-.0f"
         axisTop={null}
         axisRight={null}
         axisBottom={{
- 
           tickSize: 5,
           tickPadding: 5,
           tickRotation: 0,
-          legend: isDahboard? null : "transportation",
+          legend: isDahboard ? null : "Month",
           legendOffset: 36,
           legendPosition: "middle",
         }}
         axisLeft={{
-       
           tickSize: 5,
           tickPadding: 5,
           tickRotation: 0,
-          legend: isDahboard? null : "Count",
+          legend: isDahboard ? null : "Revenue (Million AED)",
           legendOffset: -45,
           legendPosition: "middle",
         }}
@@ -392,4 +242,5 @@ const Line = ({isDahboard = false}) => {
   );
 };
 
-export default Line;
+export default Line; 
+ 

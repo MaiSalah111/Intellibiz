@@ -26,8 +26,10 @@ import PieChartOutlineOutlinedIcon from "@mui/icons-material/PieChartOutlineOutl
 import TimelineOutlinedIcon from "@mui/icons-material/TimelineOutlined";
 import MenuOutlinedIcon from "@mui/icons-material/MenuOutlined";
 import MapOutlinedIcon from "@mui/icons-material/MapOutlined";
+import GroupsIcon from "@mui/icons-material/Groups";
 import { useLocation, useNavigate } from "react-router-dom";
 import { grey } from "@mui/material/colors";
+import { Analytics } from "@mui/icons-material";
 
 const drawerWidth = 240;
 const openedMixin = (theme) => ({
@@ -80,6 +82,7 @@ const DrawerHeader = styled("div")(({ theme }) => ({
 
 const Array1 = [
   { text: "Dashboard", icon: <HomeOutlinedIcon />, path: "/" },
+  { text: "AI Business Analysis", icon: <Analytics />, path: "/analysis" },
   { text: "Manage Team", icon: <PeopleOutlinedIcon />, path: "/team" },
   {
     text: "Contacts Information",
@@ -90,6 +93,11 @@ const Array1 = [
     text: "Invoices Balances",
     icon: <ReceiptOutlinedIcon />,
     path: "/invoices",
+  },
+  {
+    text: "Business Community",
+    icon: <GroupsIcon />,
+    path: "/community",
   },
 ];
 

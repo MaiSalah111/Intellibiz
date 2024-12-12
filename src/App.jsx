@@ -13,6 +13,7 @@ import TopBar from "./components/TopBar";
 import SideBar from "./components/SideBar";
 import { getDesignTokens } from "./theme";
 import { Outlet } from "react-router-dom";
+import AIChatWidget from "./components/AIChatWidget";
 
 const DrawerHeader = styled("div")(({ theme }) => ({
   display: "flex",
@@ -23,7 +24,7 @@ const DrawerHeader = styled("div")(({ theme }) => ({
   ...theme.mixins.toolbar,
 }));
 
-export default function MiniDrawer() {
+export default function App() {
   const [open, setOpen] = React.useState(false);
 
   const handleDrawerOpen = () => {
@@ -43,7 +44,7 @@ export default function MiniDrawer() {
 
   return (
     <ThemeProvider theme={theme}>
-      <Box sx={{ display: "flex" }}>
+      <Box sx={{ display: "flex", position: "relative" }}>
         <CssBaseline />
         <TopBar
           open={open}
@@ -58,6 +59,7 @@ export default function MiniDrawer() {
           <Outlet />
         </Box>
       </Box>
+      <AIChatWidget />
     </ThemeProvider>
   );
 }

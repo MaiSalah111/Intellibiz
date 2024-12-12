@@ -8,8 +8,7 @@ const LineChart = () => {
   const theme = useTheme();
   return (
     <Box>
-      <Header title="Line Chart" subTitle="Simple Line Chart" />
-
+      <Header title="Emirates Revenue" subTitle="Monthly Revenue by Emirate (Million AED)" />
       <Line />
     </Box>
   );
